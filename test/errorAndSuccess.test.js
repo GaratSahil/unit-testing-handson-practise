@@ -4,9 +4,17 @@ import '../src/SuccessAndError/Success.js';
 import '../src/SuccessAndError/Error.js';
 
 describe('Success screen ', () => {
-  // Write test cases inside this block
+  it('shows a button to return home', async () => {
+    const element = await fixture(html`<loan-success></loan-success>`);
+
+    expect(element.shadowRoot.querySelector('.home-btn')).to.exist;
+  });
 });
 
 describe('error screen', () => {
-  // Write test cases inside this block
+  it('shows a button to return home', async () => {
+    const element = await fixture(html`<loan-error></loan-error>`);
+
+    expect(element.shadowRoot.querySelector('.home-btn')).to.exist;
+  });
 });
